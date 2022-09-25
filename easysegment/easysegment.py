@@ -5,6 +5,8 @@ from scipy.stats import rankdata
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import power_transform
 
+__all__ = ['segment', 'kmeans', 'quantiles']
+
 
 def segment(x, labels, n_init=100, max_iter=1000, random_state=42, ascending=True, min_samples=50):
     """ Segment `x` using KMeans, or quantiles if not enough data. """
