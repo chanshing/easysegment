@@ -46,10 +46,15 @@ def kmeans(x, labels, n_init=100, max_iter=1000, random_state=42, ascending=True
     return y
 
 
-def quantiles(x, labels):
-    q = len(labels)
+def quantiles(x, labels, q=None):
 
-    if len(np.unique(x)) <= q:
+    if q is None:
+        q = len(labels)
+        nq = q
+    else:
+        nq = len(q)
+
+    if len(np.unique(x)) <= nq:
         y = rankdata(x, method='dense')
         y = pd.Series(y).replace(dict(enumerate(labels, start=1)))
         y = y.to_numpy()
