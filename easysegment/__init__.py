@@ -1,5 +1,5 @@
 name = "easysegment"
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 __author__ = "Shing Chan"
 __email__ = "cshing.m@gmail.com"
 __license__ = "2-Clause BSD"
