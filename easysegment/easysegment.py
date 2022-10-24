@@ -60,7 +60,7 @@ def quantiles(x, labels, q=None):
         y = y.to_numpy()
 
     else:
-        y = pd.qcut(x, q, duplicates='drop')
+        y = pd.Categorical(pd.qcut(x, q, duplicates='drop'))
         ncat = len(y.categories)
         y = y.rename_categories(labels[:ncat])
         y = y.to_numpy()
